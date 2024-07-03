@@ -1,0 +1,57 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <table>
+        <tr>
+          <td>
+            <input type="number" name="" id="inputOne" />
+          </td>
+          <td>
+            <select id="select">
+              <option value="+">+</option>
+              <option value="-">-</option>
+              <option value="*">*</option>
+              <option value="/">/</option>
+              <option value="%">%</option>
+            </select>
+          </td>
+          <td>
+            <input type="number" name="" id="inputTwo" />
+          </td>
+          <td>
+            <button id="calculateButton">calculate</button>
+          </td>
+        </tr>
+      </table>
+      <h1 id="displayAnswer"></h1>
+    </div>
+  </body>
+</html>
+<script>
+  const calculate = document.getElementById("calculateButton");
+  const select = document.getElementById("select");
+  const result = document.getElementById("displayAnswer");
+
+  calculate.addEventListener("click", function () {
+    const inputOne = parseFloat(document.getElementById("inputOne").value);
+    const inputTwo = parseFloat(document.getElementById("inputTwo").value);
+    if (select.value === "+") {
+      result.innerHTML = inputOne + inputTwo;
+    } else if (select.value === "-") {
+      console.log(inputOne - inputTwo);
+    } else if (select.value === "*") {
+      console.log(inputOne * inputTwo);
+    } else if (select.value === "/") {
+      console.log(inputOne / inputTwo);
+    } else if (select.value === "%") {
+      console.log(inputOne % inputTwo);
+    } else {
+      console.log("inputs are empty");
+    }
+  });
+</script>
